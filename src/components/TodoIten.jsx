@@ -5,6 +5,7 @@ const TodoItem = (props) => {
     title,
     isDone,
     onDeleteTaskButtonClick,
+    onTaskCompleteChange,
    } = props
 
   return (
@@ -14,7 +15,7 @@ const TodoItem = (props) => {
             id={id}
             type="checkbox"
             checked={isDone}
-            readOnly
+            onChange={(target) => onTaskCompleteChange(id, target.checked)}
           />
           <label
             className="todo-item__label"
